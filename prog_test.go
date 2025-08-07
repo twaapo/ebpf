@@ -643,9 +643,12 @@ func TestProgramRejectIncorrectByteOrder(t *testing.T) {
 	}
 }
 
+// This uses unkeyed fields on purpose to force setting a non-zero value when
+// a new field is added.
 func TestProgramSpecCopy(t *testing.T) {
 	a := &ProgramSpec{
 		"test",
+		1,
 		1,
 		1,
 		"attach",
